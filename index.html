@@ -12,25 +12,51 @@
             var gh = location.hostname.indexOf('.github.io') !== -1;
             if (!gh) return;
             var prefix = '/direct-peptides';
-            function fix(el) {
-                ['src', 'srcset', 'poster'].forEach(function (attr) {
-                    var v = el.getAttribute(attr);
-                    if (!v) return;
-                    // Fix root-relative /vendor/ paths
-                    if (v.indexOf('/vendor/') === 0) {
-                        el.setAttribute(attr, prefix + v);
-                    }
-                    // Fix srcset which may have multiple entries
-                    if (attr === 'srcset' && v.indexOf('/vendor/') > -1) {
-                        el.setAttribute(attr, v.replace(/(^|,\s*)(\/vendor\/)/g, '$1' + prefix + '$2'));
-                    }
+
+            // Helper: rewrite a single URL string if it starts with /vendor/
+            function rewriteUrl(url) {
+                if (typeof url === 'string' && url.indexOf('/vendor/') === 0) {
+                    return prefix + url;
+                }
+                return url;
+            }
+
+            // 1. Override HTMLImageElement.prototype.src setter
+            var imgDesc = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src');
+            if (imgDesc && imgDesc.set) {
+                Object.defineProperty(HTMLImageElement.prototype, 'src', {
+                    get: imgDesc.get,
+                    set: function (val) { imgDesc.set.call(this, rewriteUrl(val)); },
+                    configurable: true,
+                    enumerable: true
                 });
             }
-            // Also fix href on link elements (preloads)
-            function fixLink(el) {
-                var v = el.getAttribute('href');
-                if (v && v.indexOf('/vendor/') === 0) {
-                    el.setAttribute('href', prefix + v);
+
+            // 2. Override Element.prototype.setAttribute for relevant attrs
+            var origSetAttribute = Element.prototype.setAttribute;
+            Element.prototype.setAttribute = function (name, value) {
+                if ((name === 'src' || name === 'poster') && /^(IMG|SOURCE|VIDEO)$/i.test(this.tagName)) {
+                    value = rewriteUrl(value);
+                }
+                if (name === 'srcset' && typeof value === 'string') {
+                    value = value.replace(/(^|,\s*)(\/vendor\/)/g, '$1' + prefix + '$2');
+                }
+                return origSetAttribute.call(this, name, value);
+            };
+
+            // 3. MutationObserver as safety net for elements already in DOM
+            function fix(el) {
+                var src = el.getAttribute('src');
+                if (src && src.indexOf('/vendor/') === 0) {
+                    origSetAttribute.call(el, 'src', prefix + src);
+                }
+                var srcset = el.getAttribute('srcset');
+                if (srcset && srcset.indexOf('/vendor/') > -1) {
+                    origSetAttribute.call(el, 'srcset', srcset.replace(/(^|,\s*)(\/vendor\/)/g, '$1' + prefix + '$2'));
+                }
+                var poster = el.getAttribute('poster');
+                if (poster && poster.indexOf('/vendor/') === 0) {
+                    origSetAttribute.call(el, 'poster', prefix + poster);
                 }
             }
             var obs = new MutationObserver(function (muts) {
@@ -38,15 +64,12 @@
                     m.addedNodes.forEach(function (n) {
                         if (n.nodeType !== 1) return;
                         if (/^(IMG|SOURCE|VIDEO)$/i.test(n.tagName)) fix(n);
-                        if (n.tagName === 'LINK') fixLink(n);
                         if (n.querySelectorAll) {
                             n.querySelectorAll('img,source,video').forEach(fix);
-                            n.querySelectorAll('link').forEach(fixLink);
                         }
                     });
-                    if (m.type === 'attributes') {
-                        var t = m.target;
-                        if (/^(IMG|SOURCE|VIDEO)$/i.test(t.tagName)) fix(t);
+                    if (m.type === 'attributes' && /^(IMG|SOURCE|VIDEO)$/i.test(m.target.tagName)) {
+                        fix(m.target);
                     }
                 });
             });
@@ -54,10 +77,9 @@
                 childList: true, subtree: true,
                 attributes: true, attributeFilter: ['src', 'srcset', 'poster']
             });
-            // Fix any existing elements
+            // Fix any existing elements at DOMContentLoaded
             document.addEventListener('DOMContentLoaded', function () {
                 document.querySelectorAll('img,source,video').forEach(fix);
-                document.querySelectorAll('link[rel="preload"]').forEach(fixLink);
             });
         })();
     </script>
@@ -8834,7 +8856,8 @@
                                         <h1 class="framer-text framer-styles-preset-ccpmmu"
                                             data-styles-preset="koQhmEg5X"
                                             style="--framer-text-alignment:center;--framer-text-color:var(--token-a791615d-83e5-4582-a97a-38510174ba94, rgb(41, 46, 76))">
-                                            <strong class="framer-text">Batch Produced, Batch Tested</strong></h1>
+                                            <strong class="framer-text">Batch Produced, Batch Tested</strong>
+                                        </h1>
                                     </div>
                                     <div class="framer-1qfwxa1"
                                         data-framer-name="Easy click to order, and we will ship it same day."
@@ -11443,11 +11466,13 @@
                                             <h1 class="framer-text framer-styles-preset-ccpmmu"
                                                 data-styles-preset="koQhmEg5X"
                                                 style="--framer-text-alignment:left;--framer-text-color:var(--token-a791615d-83e5-4582-a97a-38510174ba94, rgb(41, 46, 76))">
-                                                <strong class="framer-text">Order with</strong></h1>
+                                                <strong class="framer-text">Order with</strong>
+                                            </h1>
                                             <h1 class="framer-text framer-styles-preset-ccpmmu"
                                                 data-styles-preset="koQhmEg5X"
                                                 style="--framer-text-alignment:left;--framer-text-color:var(--token-a791615d-83e5-4582-a97a-38510174ba94, rgb(41, 46, 76))">
-                                                <strong class="framer-text">confidence.</strong></h1>
+                                                <strong class="framer-text">confidence.</strong>
+                                            </h1>
                                         </div>
                                     </div>
                                     <div class="framer-177wm7d">
@@ -12313,7 +12338,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12340,7 +12366,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12367,7 +12394,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12394,7 +12422,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12422,7 +12451,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12450,7 +12480,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12478,7 +12509,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12506,7 +12538,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12533,7 +12566,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12560,7 +12594,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12587,7 +12622,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -12614,7 +12650,8 @@
                                         <div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit">
                                             <svg style="width:100%;height:100%;" viewBox="0 0 24 24">
                                                 <use href="#svg1592256947_487" />
-                                            </svg></div>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
