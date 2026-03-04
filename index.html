@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pure Peptides | Research-Grade Peptides, Direct From The Lab</title>
+    <title>Pure Peptides | Research-Grade Peptides, Direct from the Lab</title>
     <meta name="description"
-        content="Premium research peptides with 99%+ purity. Third-party tested, same-day shipping, lab-verified. BPC-157, TB-500, GHK-Cu, and more.">
+        content="Order research-grade peptides direct from the lab. Lab verified purity, free same-day shipping, and 24/7 support. BPC-157, TB-500, Semaglutide, and more.">
     <meta name="keywords"
-        content="research peptides, BPC-157, TB-500, GHK-Cu, peptide research, buy peptides, pure peptides">
+        content="research peptides, buy peptides, BPC-157, TB-500, Semaglutide, peptide supplier, lab verified peptides">
     <link rel="canonical" href="https://kignleon.github.io/direct-peptides/">
-    <link rel="icon" type="image/png" href="images/pure-peptides-favicon-32.png">
-    <link rel="apple-touch-icon" href="images/pure-peptides-apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Pure Peptides | Research-Grade Peptides">
+    <meta property="og:title" content="Pure Peptides | Research-Grade Peptides, Direct from the Lab">
     <meta property="og:description"
-        content="Premium research peptides with 99%+ purity. Third-party tested, same-day shipping.">
-    <meta property="og:image" content="images/pure-peptides-og.png">
+        content="Lab verified research peptides shipped same-day. Premium quality, transparent pricing.">
+    <meta property="og:image" content="assets/logo.png">
     <meta property="og:url" content="https://kignleon.github.io/direct-peptides/">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pure Peptides | Research-Grade Peptides">
-    <meta name="twitter:description" content="Premium research peptides with 99%+ purity. Third-party tested.">
-    <meta name="twitter:image" content="images/pure-peptides-og.png">
+    <meta name="twitter:description" content="Lab verified research peptides shipped same-day.">
+    <meta name="twitter:image" content="assets/logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -33,23 +33,14 @@
             theme: {
                 extend: {
                     colors: {
-                        peptide: '#4ecdc4',
-                        deep: '#1a1d2e',
-                        surface: '#1f2937',
-                        chrome: '#e5e7eb',
-                        gold: '#c9a96e',
+                        pp: '#4ecdc4',
+                        'pp-dark': '#1a1d2e',
+                        'pp-surface': '#1f2937',
+                        'pp-accent': '#c9a96e',
+                        'pp-chrome': '#e5e7eb',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        marquee: 'marquee 40s linear infinite',
-                    },
-                    keyframes: {
-                        marquee: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        },
                     },
                 }
             }
@@ -61,20 +52,25 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-gray-50 text-deep">
+<body class="bg-gray-50 text-gray-900">
 
-    <!-- Navigation -->
-    <nav class="bg-deep text-white fixed w-full z-50 border-b border-white/10 backdrop-blur-md bg-deep/95">
+    <!-- ========== NAVBAR ========== -->
+    <nav class="bg-pp-dark text-white fixed w-full z-50 border-b border-white/10 backdrop-blur-md bg-pp-dark/95">
         <div class="max-w-7xl mx-auto px-6 md:px-10">
             <div class="flex justify-between h-20 items-center">
                 <a href="./" class="flex items-center gap-3">
-                    <img src="images/pure-peptides-logo.png" alt="Pure Peptides" class="h-12 w-auto">
+                    <img src="assets/logo.png" alt="Pure Peptides" class="h-12 w-auto">
+                    <div class="flex flex-col">
+                        <span class="text-lg font-bold uppercase tracking-wider leading-none">Pure</span>
+                        <span class="text-[10px] text-pp tracking-[0.2em] font-bold uppercase">Peptides</span>
+                    </div>
                 </a>
                 <div class="hidden lg:flex space-x-8 items-center font-semibold text-sm tracking-wide">
-                    <a href="#products" class="text-chrome hover:text-white transition">Products</a>
-                    <a href="#why-us" class="text-chrome hover:text-white transition">Why Us</a>
-                    <a href="#reviews" class="text-chrome hover:text-white transition">Reviews</a>
-                    <a href="#" class="btn-primary py-2 px-6 text-xs">Shop Now</a>
+                    <a href="./" class="text-pp">Home</a>
+                    <a href="#products" class="text-pp-chrome hover:text-white transition">Products</a>
+                    <a href="#about" class="text-pp-chrome hover:text-white transition">About</a>
+                    <a href="#faq" class="text-pp-chrome hover:text-white transition">FAQ</a>
+                    <button data-trigger="modal" class="btn-primary py-2 px-6 text-xs">Get in Touch</button>
                 </div>
                 <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
                     <i class="fas fa-bars text-2xl"></i>
@@ -85,71 +81,68 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="mobile-menu-wrapper lg:hidden flex flex-col pt-10 px-6 space-y-6">
+        <a href="./" class="text-2xl font-bold text-pp">Home</a>
         <a href="#products" class="text-2xl font-bold text-white">Products</a>
-        <a href="#why-us" class="text-2xl font-bold text-white">Why Us</a>
-        <a href="#reviews" class="text-2xl font-bold text-white">Reviews</a>
-        <a href="#" class="btn-primary w-full mt-8 text-center">Shop Now</a>
+        <a href="#about" class="text-2xl font-bold text-white">About</a>
+        <a href="#faq" class="text-2xl font-bold text-white">FAQ</a>
+        <button data-trigger="modal" class="btn-primary w-full mt-8">Contact Us</button>
     </div>
 
-    <!-- Hero Section -->
-    <header class="relative bg-deep pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+    <!-- ========== HERO ========== -->
+    <header class="relative bg-pp-dark pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="images/peptide-lab-hero.png" class="w-full h-full object-cover opacity-25"
+            <img src="assets/hero-lab.png" class="w-full h-full object-cover opacity-25"
                 alt="Peptide Research Laboratory">
-            <div class="absolute inset-0 bg-gradient-to-r from-deep via-deep/80 to-deep/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-pp-dark via-pp-dark/80 to-pp-dark/40"></div>
         </div>
-        <!-- Subtle glow accent -->
-        <div
-            class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-peptide/40 to-transparent z-20">
-        </div>
+        <!-- Glow Line -->
+        <div class="absolute bottom-0 left-0 right-0 glow-line z-20"></div>
+
         <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <!-- Left: Text -->
-                <div class="scroll-reveal">
+                <div>
                     <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-peptide/10 border border-peptide/30 text-peptide text-xs font-bold uppercase tracking-wider mb-6">
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pp/10 border border-pp/30 text-pp text-xs font-bold uppercase tracking-wider mb-6">
                         <i class="fas fa-flask"></i> Research-Grade Peptides
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
-                        Research Peptides,<br><span class="text-peptide">Direct From The Lab.</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+                        Direct From<br><span class="text-pp">The Lab.</span>
                     </h1>
-                    <p class="text-lg text-chrome/80 max-w-xl mb-8 font-medium">
-                        99%+ purity guaranteed. Every batch third-party tested via HPLC & mass spectrometry.
-                        Same-day shipping on all orders.
+                    <p class="text-lg text-pp-chrome/80 max-w-xl mb-8 font-medium">
+                        Order research peptides with verified purity, transparent pricing, and free same-day
+                        shipping. No middlemen. No markup.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mb-10">
                         <a href="#products"
-                            class="btn-primary py-4 px-10 text-lg shadow-[0_0_20px_rgba(78,205,196,0.3)] hover:shadow-[0_0_30px_rgba(78,205,196,0.5)] transition-all">
-                            Browse Products
+                            class="btn-primary py-4 px-10 text-base shadow-[0_0_20px_rgba(78,205,196,0.3)]">
+                            Shop Peptides
                         </a>
-                        <a href="#why-us"
-                            class="inline-flex items-center justify-center gap-2 border border-white/20 text-white py-4 px-10 rounded-xl text-lg font-semibold hover:bg-white/10 transition backdrop-blur-sm">
-                            Why Pure Peptides <i class="fas fa-arrow-right"></i>
+                        <a href="#about" class="btn-secondary py-4 px-10 text-base">
+                            Learn More <i class="fas fa-arrow-right text-sm"></i>
                         </a>
                     </div>
-                    <!-- Trust Badges -->
-                    <div class="flex items-center gap-6 flex-wrap text-chrome/60 text-sm">
-                        <span class="flex items-center gap-2"><i class="fas fa-check-circle text-peptide"></i> Lab
+                    <div class="flex items-center gap-6 text-pp-chrome/60 text-sm">
+                        <span class="flex items-center gap-2"><i class="fas fa-check-circle text-pp"></i> Lab
                             Verified</span>
-                        <span class="flex items-center gap-2"><i class="fas fa-check-circle text-peptide"></i> 24/7
+                        <span class="flex items-center gap-2"><i class="fas fa-check-circle text-pp"></i> Free
+                            Shipping</span>
+                        <span class="flex items-center gap-2"><i class="fas fa-check-circle text-pp"></i> 24/7
                             Support</span>
-                        <span class="flex items-center gap-2"><i class="fas fa-check-circle text-peptide"></i>
-                            Same-Day Shipping</span>
                     </div>
                 </div>
-                <!-- Right: Hero Image -->
-                <div class="relative scroll-reveal-right hidden lg:block">
-                    <img src="images/peptide-vials.png" class="rounded-2xl shadow-2xl w-full"
-                        alt="Research Peptide Vials">
-                    <div class="absolute -bottom-4 -left-4 bg-surface border border-white/10 rounded-xl p-4 shadow-xl">
+                <!-- Right: Image -->
+                <div class="relative hidden lg:block">
+                    <img src="assets/vials.png" class="rounded-2xl shadow-2xl w-full" alt="Peptide Vials">
+                    <div
+                        class="absolute -bottom-4 -left-4 bg-pp-surface border border-white/10 rounded-xl p-4 shadow-xl backdrop-blur-sm">
                         <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 bg-peptide/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-certificate text-peptide"></i>
+                            <div class="w-10 h-10 bg-pp/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-pp"></i>
                             </div>
                             <div>
-                                <div class="text-sm font-bold text-white">99.1% Purity</div>
-                                <div class="text-xs text-chrome/50">HPLC Verified</div>
+                                <div class="text-sm font-bold text-white">99%+ Purity</div>
+                                <div class="text-xs text-pp-chrome/50">Third-Party Verified</div>
                             </div>
                         </div>
                     </div>
@@ -158,496 +151,499 @@
         </div>
     </header>
 
-    <!-- Stats Bar -->
+    <!-- ========== MARQUEE TICKER ========== -->
+    <div class="bg-pp-dark py-3 border-b border-white/5">
+        <div class="ticker-wrapper">
+            <div class="ticker-content text-pp-chrome/50 text-xs font-semibold tracking-wider uppercase">
+                <span class="flex items-center gap-2"><i class="fas fa-check text-pp"></i> Lab Verified
+                    Purity</span>
+                <span class="flex items-center gap-2"><i class="fas fa-truck text-pp"></i> Free Same-Day
+                    Shipping</span>
+                <span class="flex items-center gap-2"><i class="fas fa-lock text-pp"></i> Secure
+                    Checkout</span>
+                <span class="flex items-center gap-2"><i class="fas fa-headset text-pp"></i> 24/7
+                    Support</span>
+                <span class="flex items-center gap-2"><i class="fas fa-flask text-pp"></i> Research Grade
+                    Only</span>
+                <span class="flex items-center gap-2"><i class="fas fa-certificate text-pp"></i> Third-Party
+                    Tested</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="flex items-center gap-2"><i class="fas fa-check text-pp"></i> Lab Verified
+                    Purity</span>
+                <span class="flex items-center gap-2"><i class="fas fa-truck text-pp"></i> Free Same-Day
+                    Shipping</span>
+                <span class="flex items-center gap-2"><i class="fas fa-lock text-pp"></i> Secure
+                    Checkout</span>
+                <span class="flex items-center gap-2"><i class="fas fa-headset text-pp"></i> 24/7
+                    Support</span>
+                <span class="flex items-center gap-2"><i class="fas fa-flask text-pp"></i> Research Grade
+                    Only</span>
+                <span class="flex items-center gap-2"><i class="fas fa-certificate text-pp"></i> Third-Party
+                    Tested</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== STATS BAR ========== -->
     <section class="bg-white border-b border-gray-100 py-10 relative z-20">
         <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div class="scroll-reveal">
-                <div class="text-4xl font-extrabold text-deep">99.1<span class="text-peptide">%</span></div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Average Purity</div>
+            <div class="stat-item">
+                <div class="text-4xl font-black text-pp-dark">99<span class="text-pp">%+</span></div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider mt-1 font-semibold">Verified Purity</div>
             </div>
-            <div class="scroll-reveal">
-                <div class="text-4xl font-extrabold text-deep">48<span class="text-peptide">hr</span></div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Ship Time</div>
+            <div class="stat-item">
+                <div class="text-4xl font-black text-pp-dark">50<span class="text-pp">+</span></div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider mt-1 font-semibold">Products Available</div>
             </div>
-            <div class="scroll-reveal">
-                <div class="text-4xl font-extrabold text-deep">5k<span class="text-peptide">+</span></div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Orders Fulfilled</div>
+            <div class="stat-item">
+                <div class="text-4xl font-black text-pp-dark">24<span class="text-pp">/7</span></div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider mt-1 font-semibold">Customer Support</div>
             </div>
-            <div class="scroll-reveal">
-                <div class="text-4xl font-extrabold text-deep">3rd<span class="text-peptide">✓</span></div>
-                <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Party Tested</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Catalog -->
-    <section id="products" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
-            <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-peptide uppercase tracking-widest text-sm font-bold mb-3">Our Catalog</h2>
-                <h3 class="text-4xl font-extrabold text-deep">Research Peptides</h3>
-                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">All products manufactured under strict GMP conditions.
-                    Certificate of Analysis included with every order.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-                <!-- Product Card: BPC-157 -->
-                <div
-                    class="group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-peptide/30 transition-all duration-300 overflow-hidden scroll-reveal">
-                    <div class="h-48 overflow-hidden relative bg-gradient-to-br from-gray-50 to-gray-100">
-                        <img src="images/peptide-vials.png"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-                            alt="BPC-157">
-                        <div class="absolute inset-0 bg-deep/5 group-hover:bg-deep/0 transition"></div>
-                        <span
-                            class="absolute top-3 right-3 bg-peptide text-deep text-xs font-bold px-2 py-1 rounded-full">Popular</span>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold text-deep mb-1">BPC-157</h4>
-                        <p class="text-gray-400 text-sm mb-3">5mg · Lyophilized</p>
-                        <p class="text-gray-500 text-sm mb-4">Body Protection Compound. Extensively studied for tissue
-                            repair and recovery research.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-extrabold text-deep">$34.99</span>
-                            <span
-                                class="text-peptide font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">View
-                                <i class="fas fa-arrow-right text-xs"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card: TB-500 -->
-                <div
-                    class="group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-peptide/30 transition-all duration-300 overflow-hidden scroll-reveal">
-                    <div class="h-48 overflow-hidden relative bg-gradient-to-br from-gray-50 to-gray-100">
-                        <img src="images/peptide-vials.png"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-                            alt="TB-500">
-                        <div class="absolute inset-0 bg-deep/5 group-hover:bg-deep/0 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold text-deep mb-1">TB-500</h4>
-                        <p class="text-gray-400 text-sm mb-3">5mg · Lyophilized</p>
-                        <p class="text-gray-500 text-sm mb-4">Thymosin Beta-4 fragment. Studied for cell migration and
-                            wound healing mechanisms.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-extrabold text-deep">$39.99</span>
-                            <span
-                                class="text-peptide font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">View
-                                <i class="fas fa-arrow-right text-xs"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card: GHK-Cu -->
-                <div
-                    class="group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-peptide/30 transition-all duration-300 overflow-hidden scroll-reveal">
-                    <div class="h-48 overflow-hidden relative bg-gradient-to-br from-gray-50 to-gray-100">
-                        <img src="images/peptide-vials.png"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-                            alt="GHK-Cu">
-                        <div class="absolute inset-0 bg-deep/5 group-hover:bg-deep/0 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold text-deep mb-1">GHK-Cu</h4>
-                        <p class="text-gray-400 text-sm mb-3">50mg · Lyophilized</p>
-                        <p class="text-gray-500 text-sm mb-4">Copper peptide complex. Researched for skin remodeling and
-                            collagen synthesis pathways.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-extrabold text-deep">$29.99</span>
-                            <span
-                                class="text-peptide font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">View
-                                <i class="fas fa-arrow-right text-xs"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card: PT-141 -->
-                <div
-                    class="group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-peptide/30 transition-all duration-300 overflow-hidden scroll-reveal">
-                    <div class="h-48 overflow-hidden relative bg-gradient-to-br from-gray-50 to-gray-100">
-                        <img src="images/peptide-vials.png"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-                            alt="PT-141">
-                        <div class="absolute inset-0 bg-deep/5 group-hover:bg-deep/0 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold text-deep mb-1">PT-141</h4>
-                        <p class="text-gray-400 text-sm mb-3">10mg · Lyophilized</p>
-                        <p class="text-gray-500 text-sm mb-4">Bremelanotide. Studied for melanocortin receptor
-                            activation research applications.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-extrabold text-deep">$44.99</span>
-                            <span
-                                class="text-peptide font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">View
-                                <i class="fas fa-arrow-right text-xs"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card: Melanotan II -->
-                <div
-                    class="group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-peptide/30 transition-all duration-300 overflow-hidden scroll-reveal">
-                    <div class="h-48 overflow-hidden relative bg-gradient-to-br from-gray-50 to-gray-100">
-                        <img src="images/peptide-vials.png"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-                            alt="Melanotan II">
-                        <div class="absolute inset-0 bg-deep/5 group-hover:bg-deep/0 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold text-deep mb-1">Melanotan II</h4>
-                        <p class="text-gray-400 text-sm mb-3">10mg · Lyophilized</p>
-                        <p class="text-gray-500 text-sm mb-4">Alpha-MSH analog. Investigated in melanogenesis and
-                            photoprotection research.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-extrabold text-deep">$27.99</span>
-                            <span
-                                class="text-peptide font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">View
-                                <i class="fas fa-arrow-right text-xs"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card: Ipamorelin -->
-                <div
-                    class="group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-peptide/30 transition-all duration-300 overflow-hidden scroll-reveal">
-                    <div class="h-48 overflow-hidden relative bg-gradient-to-br from-gray-50 to-gray-100">
-                        <img src="images/peptide-vials.png"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-                            alt="Ipamorelin">
-                        <div class="absolute inset-0 bg-deep/5 group-hover:bg-deep/0 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold text-deep mb-1">Ipamorelin</h4>
-                        <p class="text-gray-400 text-sm mb-3">5mg · Lyophilized</p>
-                        <p class="text-gray-500 text-sm mb-4">Selective GH secretagogue. Studied for growth hormone
-                            pathway activation in vitro.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-extrabold text-deep">$32.99</span>
-                            <span
-                                class="text-peptide font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">View
-                                <i class="fas fa-arrow-right text-xs"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card: CJC-1295 -->
-                <div
-                    class="group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-peptide/30 transition-all duration-300 overflow-hidden scroll-reveal">
-                    <div class="h-48 overflow-hidden relative bg-gradient-to-br from-gray-50 to-gray-100">
-                        <img src="images/peptide-vials.png"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
-                            alt="CJC-1295">
-                        <div class="absolute inset-0 bg-deep/5 group-hover:bg-deep/0 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold text-deep mb-1">CJC-1295 (no DAC)</h4>
-                        <p class="text-gray-400 text-sm mb-3">5mg · Lyophilized</p>
-                        <p class="text-gray-500 text-sm mb-4">Modified GRF 1-29. Researched for GHRH receptor studies
-                            and pulsatile GH release.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-extrabold text-deep">$36.99</span>
-                            <span
-                                class="text-peptide font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">View
-                                <i class="fas fa-arrow-right text-xs"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- View All CTA Card -->
-                <a href="#"
-                    class="group bg-deep rounded-2xl p-8 shadow-lg border border-white/10 hover:shadow-2xl hover:border-peptide/30 transition-all duration-300 flex flex-col justify-center items-center text-center scroll-reveal">
-                    <div
-                        class="w-14 h-14 bg-peptide/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-peptide/20 transition">
-                        <i class="fas fa-th-large text-2xl text-peptide"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-white mb-3">View Full Catalog</h4>
-                    <p class="text-chrome/60 mb-4">Explore our complete range of research peptides.</p>
-                    <span
-                        class="text-peptide font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">Browse
-                        All <i class="fas fa-arrow-right text-xs"></i></span>
-                </a>
-
+            <div class="stat-item">
+                <div class="text-4xl font-black text-pp-dark">Free</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider mt-1 font-semibold">Same-Day Shipping</div>
             </div>
         </div>
     </section>
 
-    <!-- Why Pure Peptides -->
-    <section id="why-us" class="py-24 bg-deep text-white">
+    <!-- ========== ABOUT / VALUE PROP ========== -->
+    <section id="about" class="py-24 bg-gray-50 aurora-accent">
         <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="scroll-reveal">
-                <h2 class="text-peptide uppercase tracking-widest text-sm font-bold mb-3">Why Pure Peptides</h2>
-                <h3 class="text-4xl font-extrabold mb-6">Science First,<br>Always.</h3>
-                <p class="text-chrome/70 text-lg mb-8">
-                    We don't cut corners. Every peptide is synthesized under strict GMP protocols and verified through
-                    independent third-party analysis before it reaches your lab.
+                <h2 class="text-pp uppercase tracking-widest text-sm font-bold mb-3">Why Pure Peptides</h2>
+                <h3 class="text-4xl font-black text-pp-dark mb-6">Direct From the Lab,<br>Not a Middleman</h3>
+                <p class="text-gray-500 text-lg mb-8 leading-relaxed">
+                    At Pure Peptides, we eliminate the middleman by supplying products directly from the lab.
+                    This ensures you receive the highest quality product with full transparency and competitive
+                    pricing. Every batch is third-party tested and comes with a Certificate of Analysis.
                 </p>
-                <div class="space-y-5">
+                <div class="space-y-4">
                     <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-peptide/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-microscope text-peptide"></i>
+                        <div class="w-10 h-10 bg-pp/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-microscope text-pp"></i>
                         </div>
                         <div>
-                            <h5 class="font-bold mb-1">Pharmaceutical-Grade Synthesis</h5>
-                            <p class="text-chrome/60 text-sm">Manufactured in ISO-certified facilities using
-                                solid-phase peptide synthesis (SPPS).</p>
+                            <h5 class="font-bold text-pp-dark mb-1">Lab-Direct Supply Chain</h5>
+                            <p class="text-gray-500 text-sm">No distributors, no markup. Every product ships
+                                directly from our verified lab partners.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-peptide/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-vial text-peptide"></i>
+                        <div class="w-10 h-10 bg-pp/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-pp"></i>
                         </div>
                         <div>
-                            <h5 class="font-bold mb-1">Third-Party HPLC Testing</h5>
-                            <p class="text-chrome/60 text-sm">Every batch analyzed via HPLC and mass spectrometry. COA
-                                included with every order.</p>
+                            <h5 class="font-bold text-pp-dark mb-1">Certificate of Analysis</h5>
+                            <p class="text-gray-500 text-sm">Every product includes a CoA from an independent
+                                third-party lab confirming purity and identity.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-peptide/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-shipping-fast text-peptide"></i>
+                        <div class="w-10 h-10 bg-pp/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shipping-fast text-pp"></i>
                         </div>
                         <div>
-                            <h5 class="font-bold mb-1">Same-Day Shipping</h5>
-                            <p class="text-chrome/60 text-sm">Orders placed before 2PM EST ship the same business day
-                                with tracking provided.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-peptide/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-headset text-peptide"></i>
-                        </div>
-                        <div>
-                            <h5 class="font-bold mb-1">Dedicated Research Support</h5>
-                            <p class="text-chrome/60 text-sm">Expert technical assistance for reconstitution, storage,
-                                and handling protocols.</p>
+                            <h5 class="font-bold text-pp-dark mb-1">Same-Day Shipping</h5>
+                            <p class="text-gray-500 text-sm">Orders placed before 2 PM ship the same day with
+                                full tracking and discreet packaging.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="relative scroll-reveal-right">
-                <img src="images/lab-testing.png" class="rounded-2xl shadow-2xl w-full" alt="HPLC Quality Testing">
-                <div class="absolute -bottom-6 -left-6 bg-surface border border-white/10 rounded-xl p-6 shadow-xl">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-peptide/10 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-award text-peptide text-xl"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm font-bold text-white">GMP Certified</div>
-                            <div class="text-xs text-chrome/50">ISO Compliant Facility</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="scroll-reveal relative">
+                <img src="assets/molecular.png" class="rounded-2xl shadow-2xl w-full" alt="Peptide Molecular Structure">
             </div>
         </div>
     </section>
 
-    <!-- Reviews Marquee -->
-    <section id="reviews" class="py-16 bg-white overflow-hidden relative">
-        <div class="max-w-7xl mx-auto px-6 md:px-10 mb-10 scroll-reveal">
-            <h2 class="text-peptide uppercase tracking-widest text-sm font-bold mb-2">Trusted Research Partners</h2>
-            <h3 class="text-3xl font-extrabold text-deep">What Researchers Say</h3>
-        </div>
-        <div class="relative w-full overflow-hidden">
-            <div class="flex gap-6 animate-marquee w-max">
-                <!-- Review Cards (Set A) -->
-                <div class="w-80 md:w-96 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex-shrink-0">
-                    <div class="flex text-yellow-400 mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">"Exceptional purity on the BPC-157. HPLC results matched
-                        their claims perfectly. Will be ordering again for our next study."</p>
-                    <div class="font-bold text-deep text-sm">— Dr. K. Morrison, Research Biochemist</div>
-                </div>
-                <div class="w-80 md:w-96 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex-shrink-0">
-                    <div class="flex text-yellow-400 mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">"Fast shipping and the COA was included before I even had to
-                        ask. This is how peptide suppliers should operate."</p>
-                    <div class="font-bold text-deep text-sm">— Marcus T., Lab Technician</div>
-                </div>
-                <div class="w-80 md:w-96 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex-shrink-0">
-                    <div class="flex text-yellow-400 mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">"We switched from our previous supplier to Pure Peptides and
-                        the consistency is noticeably better. Highly recommended."</p>
-                    <div class="font-bold text-deep text-sm">— Sarah L., Molecular Biology Lab</div>
-                </div>
-                <div class="w-80 md:w-96 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex-shrink-0">
-                    <div class="flex text-yellow-400 mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">"The TB-500 and GHK-Cu both came in perfect lyophilized form.
-                        Great packaging and the price point is very competitive."</p>
-                    <div class="font-bold text-deep text-sm">— James R., Independent Researcher</div>
-                </div>
-                <div class="w-80 md:w-96 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex-shrink-0">
-                    <div class="flex text-yellow-400 mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">"Customer support actually understands peptide handling
-                        protocols. Rare to find that level of expertise from a supplier."</p>
-                    <div class="font-bold text-deep text-sm">— Dr. P. Nguyen, Pharmacology Dept.</div>
-                </div>
-                <!-- Set B (duplicate for seamless loop) -->
-                <div class="w-80 md:w-96 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex-shrink-0"
-                    aria-hidden="true">
-                    <div class="flex text-yellow-400 mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">"Exceptional purity on the BPC-157. HPLC results matched
-                        their claims perfectly. Will be ordering again for our next study."</p>
-                    <div class="font-bold text-deep text-sm">— Dr. K. Morrison, Research Biochemist</div>
-                </div>
-                <div class="w-80 md:w-96 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex-shrink-0"
-                    aria-hidden="true">
-                    <div class="flex text-yellow-400 mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">"Fast shipping and the COA was included before I even had to
-                        ask. This is how peptide suppliers should operate."</p>
-                    <div class="font-bold text-deep text-sm">— Marcus T., Lab Technician</div>
-                </div>
-                <div class="w-80 md:w-96 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex-shrink-0"
-                    aria-hidden="true">
-                    <div class="flex text-yellow-400 mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">"We switched from our previous supplier to Pure Peptides and
-                        the consistency is noticeably better. Highly recommended."</p>
-                    <div class="font-bold text-deep text-sm">— Sarah L., Molecular Biology Lab</div>
-                </div>
-                <div class="w-80 md:w-96 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex-shrink-0"
-                    aria-hidden="true">
-                    <div class="flex text-yellow-400 mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">"The TB-500 and GHK-Cu both came in perfect lyophilized form.
-                        Great packaging and the price point is very competitive."</p>
-                    <div class="font-bold text-deep text-sm">— James R., Independent Researcher</div>
-                </div>
-                <div class="w-80 md:w-96 bg-gray-50 border border-gray-100 p-6 rounded-2xl flex-shrink-0"
-                    aria-hidden="true">
-                    <div class="flex text-yellow-400 mb-2">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-4">"Customer support actually understands peptide handling
-                        protocols. Rare to find that level of expertise from a supplier."</p>
-                    <div class="font-bold text-deep text-sm">— Dr. P. Nguyen, Pharmacology Dept.</div>
-                </div>
+    <!-- ========== FEATURED PRODUCTS ========== -->
+    <section id="products" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-pp uppercase tracking-widest text-sm font-bold mb-3">Our Catalog</h2>
+                <h3 class="text-4xl font-black text-pp-dark">Research-Grade Peptides</h3>
+                <p class="text-gray-400 mt-3 max-w-xl mx-auto">Browse our selection of lab-verified peptides.
+                    Every product ships with a Certificate of Analysis.</p>
             </div>
-            <!-- Fade Edges -->
-            <div
-                class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10">
-            </div>
-            <div
-                class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none z-10">
-            </div>
-        </div>
-    </section>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    <!-- CTA Banner -->
-    <section class="py-20 bg-white relative">
-        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-peptide/20 to-transparent">
-        </div>
-        <div class="max-w-4xl mx-auto px-6 md:px-10 text-center scroll-reveal">
-            <div class="bg-deep border border-white/10 rounded-2xl shadow-2xl relative py-16 px-8">
+                <!-- Product 1 -->
                 <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-peptide/10 border border-peptide/30 text-peptide text-xs font-bold uppercase tracking-wider mb-6">
-                    <i class="fas fa-flask"></i> For Research Use Only
+                    class="product-card group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-pp/30 transition-all duration-300 overflow-hidden scroll-reveal">
+                    <div class="h-48 bg-gradient-to-br from-pp-dark to-pp-surface flex items-center justify-center">
+                        <i class="fas fa-flask text-5xl text-pp/40"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-lg font-bold text-pp-dark">BPC-157</h4>
+                            <span class="text-pp font-bold text-sm">5mg</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Body Protection Compound. Research-grade
+                            lyophilized peptide with 99%+ purity.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-black text-pp-dark">$34.99</span>
+                            <a href="#"
+                                class="text-pp font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Start Your Research Today</h2>
-                <p class="text-chrome/70 text-lg mb-8 max-w-xl mx-auto">Browse our full catalog of research-grade
-                    peptides. Every product ships with a Certificate of Analysis.</p>
+
+                <!-- Product 2 -->
+                <div
+                    class="product-card group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-pp/30 transition-all duration-300 overflow-hidden scroll-reveal">
+                    <div class="h-48 bg-gradient-to-br from-pp-dark to-pp-surface flex items-center justify-center">
+                        <i class="fas fa-flask text-5xl text-pp/40"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-lg font-bold text-pp-dark">TB-500</h4>
+                            <span class="text-pp font-bold text-sm">5mg</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Thymosin Beta-4 fragment. Research-grade peptide
+                            for cellular research applications.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-black text-pp-dark">$39.99</span>
+                            <a href="#"
+                                class="text-pp font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div
+                    class="product-card group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-pp/30 transition-all duration-300 overflow-hidden scroll-reveal">
+                    <div class="h-48 bg-gradient-to-br from-pp-dark to-pp-surface flex items-center justify-center">
+                        <i class="fas fa-flask text-5xl text-pp/40"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-lg font-bold text-pp-dark">Semaglutide</h4>
+                            <span class="text-pp font-bold text-sm">3mg</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">GLP-1 receptor agonist peptide. Lab verified
+                            purity for research use only.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-black text-pp-dark">$89.99</span>
+                            <a href="#"
+                                class="text-pp font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div
+                    class="product-card group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-pp/30 transition-all duration-300 overflow-hidden scroll-reveal">
+                    <div class="h-48 bg-gradient-to-br from-pp-dark to-pp-surface flex items-center justify-center">
+                        <i class="fas fa-flask text-5xl text-pp/40"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-lg font-bold text-pp-dark">PT-141</h4>
+                            <span class="text-pp font-bold text-sm">10mg</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Bremelanotide research peptide. Lyophilized
+                            powder with full CoA documentation.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-black text-pp-dark">$29.99</span>
+                            <a href="#"
+                                class="text-pp font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div
+                    class="product-card group bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl hover:border-pp/30 transition-all duration-300 overflow-hidden scroll-reveal">
+                    <div class="h-48 bg-gradient-to-br from-pp-dark to-pp-surface flex items-center justify-center">
+                        <i class="fas fa-flask text-5xl text-pp/40"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-lg font-bold text-pp-dark">CJC-1295 (no DAC)</h4>
+                            <span class="text-pp font-bold text-sm">2mg</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">Modified GRF (1-29). Growth hormone releasing
+                            peptide for research applications.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-black text-pp-dark">$24.99</span>
+                            <a href="#"
+                                class="text-pp font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                View Details <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Browse All CTA Card -->
+                <div
+                    class="group bg-pp-dark rounded-2xl p-8 shadow-lg border border-white/10 hover:shadow-2xl hover:border-pp/30 transition-all duration-300 flex flex-col justify-center items-center text-center scroll-reveal">
+                    <div
+                        class="w-14 h-14 bg-pp/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-pp/20 transition">
+                        <i class="fas fa-th-large text-2xl text-pp"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Browse Full Catalog</h4>
+                    <p class="text-pp-chrome/60 mb-4 text-sm">Explore our complete range of research-grade
+                        peptides.</p>
+                    <span
+                        class="text-pp font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                        View All <i class="fas fa-arrow-right text-xs"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES GRID ========== -->
+    <section class="py-24 bg-pp-dark text-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-pp uppercase tracking-widest text-sm font-bold mb-3">The Pure Peptides Standard</h2>
+                <h3 class="text-4xl font-black">Quality You Can Trust</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-glass rounded-2xl p-8 text-center card-hover scroll-reveal">
+                    <div class="w-14 h-14 bg-pp/10 rounded-xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-microscope text-2xl text-pp"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Lab Verified</h4>
+                    <p class="text-pp-chrome/60 text-sm">Every batch tested by independent third-party labs
+                        with full Certificate of Analysis.</p>
+                </div>
+                <div class="card-glass rounded-2xl p-8 text-center card-hover scroll-reveal">
+                    <div class="w-14 h-14 bg-pp/10 rounded-xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-truck text-2xl text-pp"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Free Shipping</h4>
+                    <p class="text-pp-chrome/60 text-sm">Same-day shipping on all orders placed before 2 PM.
+                        Discreet packaging standard.</p>
+                </div>
+                <div class="card-glass rounded-2xl p-8 text-center card-hover scroll-reveal">
+                    <div class="w-14 h-14 bg-pp/10 rounded-xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-lock text-2xl text-pp"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">Secure Checkout</h4>
+                    <p class="text-pp-chrome/60 text-sm">256-bit SSL encryption. Your data is protected at
+                        every step of the ordering process.</p>
+                </div>
+                <div class="card-glass rounded-2xl p-8 text-center card-hover scroll-reveal">
+                    <div class="w-14 h-14 bg-pp/10 rounded-xl flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-headset text-2xl text-pp"></i>
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">24/7 Support</h4>
+                    <p class="text-pp-chrome/60 text-sm">Dedicated support team available around the clock to
+                        assist with orders and questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="py-20 bg-white relative">
+        <div class="absolute top-0 left-0 right-0 glow-line"></div>
+        <div class="max-w-4xl mx-auto px-6 md:px-10 text-center scroll-reveal">
+            <div class="card-glass rounded-2xl shadow-2xl relative py-16 px-8">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pp/10 border border-pp/30 text-pp text-xs font-bold uppercase tracking-wider mb-6">
+                    <i class="fas fa-flask"></i> Research Peptides
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Ready to Order?</h2>
+                <p class="text-pp-chrome/70 text-lg mb-8 max-w-xl mx-auto">Contact us for bulk pricing,
+                    custom orders, or questions about our product catalog.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#products" class="btn-primary py-4 px-10 text-lg">Browse Products</a>
-                    <a href="mailto:support@purepeptides.com"
-                        class="inline-flex items-center justify-center gap-2 border border-white/20 text-white py-4 px-10 rounded-xl text-lg font-semibold hover:bg-white/10 transition">
-                        <i class="fas fa-envelope"></i> Contact Us
+                    <button data-trigger="modal" class="btn-primary py-4 px-10 text-base">
+                        Get in Touch
+                    </button>
+                    <a href="#products" class="btn-secondary py-4 px-10 text-base">
+                        Browse Products <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-deep text-chrome/50 pt-20 pb-8 border-t border-white/5">
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="py-24 bg-pp-dark text-white">
+        <div class="max-w-3xl mx-auto px-6 md:px-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-pp uppercase tracking-widest text-sm font-bold mb-3">FAQ</h2>
+                <h3 class="text-4xl font-black">Common Questions</h3>
+            </div>
+
+            <div class="space-y-0 scroll-reveal">
+                <div class="faq-item py-5">
+                    <div class="faq-question flex items-center justify-between text-lg font-bold">
+                        <span>What purity are your peptides?</span>
+                        <i class="fas fa-chevron-down text-pp faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="pt-3 text-pp-chrome/60 text-sm leading-relaxed">All of our peptides are
+                            verified at 99%+ purity through independent third-party HPLC and mass spectrometry
+                            testing. Every product ships with a Certificate of Analysis.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-question flex items-center justify-between text-lg font-bold">
+                        <span>Do you offer free shipping?</span>
+                        <i class="fas fa-chevron-down text-pp faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="pt-3 text-pp-chrome/60 text-sm leading-relaxed">Yes. All domestic orders
+                            ship free. Orders placed before 2 PM ship the same business day with full tracking
+                            provided.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-question flex items-center justify-between text-lg font-bold">
+                        <span>Are these peptides for human use?</span>
+                        <i class="fas fa-chevron-down text-pp faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="pt-3 text-pp-chrome/60 text-sm leading-relaxed">No. All Pure Peptides
+                            products are sold strictly for research and laboratory purposes only. They are not
+                            intended for human consumption or clinical use.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-question flex items-center justify-between text-lg font-bold">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down text-pp faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="pt-3 text-pp-chrome/60 text-sm leading-relaxed">We accept all major credit
+                            cards, debit cards, and select digital payment methods. All transactions are
+                            processed through 256-bit SSL encrypted checkout.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-question flex items-center justify-between text-lg font-bold">
+                        <span>Can I order in bulk?</span>
+                        <i class="fas fa-chevron-down text-pp faq-chevron"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="pt-3 text-pp-chrome/60 text-sm leading-relaxed">Yes. We offer competitive
+                            bulk pricing for research institutions and laboratories. Contact us directly for
+                            custom quotes on large orders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-pp-dark text-pp-chrome/50 pt-20 pb-8 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div>
                 <div class="flex items-center gap-3 mb-6">
-                    <img src="images/pure-peptides-logo.png" alt="Pure Peptides" class="h-10 w-auto">
+                    <img src="assets/logo.png" alt="Pure Peptides" class="h-10 w-auto">
+                    <div class="flex flex-col">
+                        <span class="text-white font-bold uppercase tracking-wider text-sm">Pure</span>
+                        <span class="text-pp text-[9px] tracking-[0.15em] font-bold uppercase">Peptides</span>
+                    </div>
                 </div>
-                <p class="text-sm text-chrome/60 leading-relaxed mb-4">
-                    Premium research-grade peptides with 99%+ purity. Third-party tested and verified.
+                <p class="text-sm text-pp-chrome/60 leading-relaxed mb-4">
+                    Research-grade peptides shipped direct from the lab. Verified purity, transparent pricing,
+                    and dedicated support.
                 </p>
-                <div class="flex gap-4 text-chrome/50">
-                    <a href="#" class="hover:text-peptide transition"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="hover:text-peptide transition"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#" class="hover:text-peptide transition"><i class="fab fa-linkedin fa-lg"></i></a>
+                <div class="flex gap-4 text-pp-chrome/50">
+                    <a href="#" class="hover:text-pp transition" rel="noopener noreferrer"><i
+                            class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="hover:text-pp transition" rel="noopener noreferrer"><i
+                            class="fab fa-twitter fa-lg"></i></a>
                 </div>
             </div>
             <div>
-                <h4 class="font-bold text-white mb-6 uppercase tracking-wider">Products</h4>
-                <ul class="space-y-3 text-chrome/60">
-                    <li><a href="#products" class="hover:text-peptide transition">BPC-157</a></li>
-                    <li><a href="#products" class="hover:text-peptide transition">TB-500</a></li>
-                    <li><a href="#products" class="hover:text-peptide transition">GHK-Cu</a></li>
-                    <li><a href="#products" class="hover:text-peptide transition">Ipamorelin</a></li>
-                    <li><a href="#products" class="hover:text-peptide transition">View All</a></li>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Products</h4>
+                <ul class="space-y-3 text-pp-chrome/60 text-sm">
+                    <li><a href="#products" class="hover:text-pp transition">BPC-157</a></li>
+                    <li><a href="#products" class="hover:text-pp transition">TB-500</a></li>
+                    <li><a href="#products" class="hover:text-pp transition">Semaglutide</a></li>
+                    <li><a href="#products" class="hover:text-pp transition">PT-141</a></li>
+                    <li><a href="#products" class="hover:text-pp transition">View All</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-white mb-6 uppercase tracking-wider">Company</h4>
-                <ul class="space-y-3 text-chrome/60">
-                    <li><a href="#why-us" class="hover:text-peptide transition">About Us</a></li>
-                    <li><a href="#" class="hover:text-peptide transition">Quality Assurance</a></li>
-                    <li><a href="#" class="hover:text-peptide transition">Shipping Policy</a></li>
-                    <li><a href="#" class="hover:text-peptide transition">Privacy Policy</a></li>
+                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Company</h4>
+                <ul class="space-y-3 text-pp-chrome/60 text-sm">
+                    <li><a href="#about" class="hover:text-pp transition">About Us</a></li>
+                    <li><a href="#faq" class="hover:text-pp transition">FAQ</a></li>
+                    <li><a href="#" class="hover:text-pp transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-pp transition">Privacy Policy</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-white mb-6 uppercase tracking-wider">Contact</h4>
-                <ul class="space-y-4 text-chrome/60">
+                <h4 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Contact</h4>
+                <ul class="space-y-4 text-pp-chrome/60 text-sm">
                     <li class="flex items-center gap-3">
-                        <i class="fas fa-envelope text-peptide"></i>
+                        <i class="fas fa-envelope text-pp"></i>
                         <a href="mailto:support@purepeptides.com"
                             class="hover:text-white transition">support@purepeptides.com</a>
                     </li>
                     <li class="flex items-center gap-3">
-                        <i class="fas fa-clock text-peptide"></i>
-                        <span>Mon–Fri, 9AM–5PM EST</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-shipping-fast text-peptide"></i>
-                        <span>Same-Day Shipping Available</span>
+                        <i class="fas fa-headset text-pp"></i>
+                        <span>24/7 Live Support</span>
                     </li>
                 </ul>
             </div>
         </div>
-        <div
-            class="max-w-7xl mx-auto px-6 md:px-10 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-xs text-chrome/40">&copy; 2026 Pure Peptides. All products are for research purposes only.
-                Not for human consumption.</p>
-            <a href="https://www.lovoson.com" target="_blank"
+        <div class="footer-copyright-row max-w-7xl mx-auto px-6 md:px-10">
+            <p class="text-xs text-pp-chrome/40">&copy; 2026 Pure Peptides. All rights reserved. For research
+                use only.</p>
+            <a href="https://www.lovoson.com" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 text-blue-400/60 hover:text-white text-xs transition-colors">
-                <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1770280276/lovoson_icon_svg_dxrbpw.svg"
-                    alt="Lovoson" class="h-4 w-4 opacity-60">
                 Designed by Lovoson Media
             </a>
         </div>
     </footer>
+
+    <!-- ========== CONTACT MODAL ========== -->
+    <div id="modal-overlay"
+        class="fixed inset-0 z-[60] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-container card-glass w-full max-w-lg rounded-2xl shadow-2xl relative">
+            <button data-close="modal" class="absolute top-4 right-4 text-pp-chrome/50 hover:text-white">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="p-8">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pp/10 border border-pp/30 text-pp text-xs font-bold uppercase tracking-wider mb-4">
+                    <i class="fas fa-flask"></i> Contact Us
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Get in Touch</h3>
+                <p class="text-pp-chrome/60 text-sm mb-6">Questions about products, bulk orders, or custom
+                    requests? We'll get back to you within 24 hours.</p>
+                <form class="space-y-3" action="https://formsubmit.co/support@purepeptides.com" method="POST">
+                    <div class="grid grid-cols-2 gap-3">
+                        <input type="text" name="firstName" placeholder="First Name" required class="form-input">
+                        <input type="text" name="lastName" placeholder="Last Name" required class="form-input">
+                    </div>
+                    <input type="email" name="email" placeholder="Email Address" required class="form-input">
+                    <input type="tel" name="phone" placeholder="Phone Number" class="form-input">
+                    <textarea name="message" placeholder="Your message..." rows="3"
+                        class="form-input resize-none"></textarea>
+                    <input type="hidden" name="_subject" value="New inquiry from Pure Peptides website">
+                    <button type="submit" class="btn-primary w-full py-3 text-sm">Send Message</button>
+                    <p class="text-center text-xs text-pp-chrome/40">We never share your information.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAB -->
+    <button data-trigger="modal"
+        class="fixed bottom-6 right-6 z-50 bg-pp-dark text-white w-14 h-14 rounded-full shadow-lg shadow-pp/20 flex items-center justify-center transition hover:scale-110 hover:shadow-pp/40 border border-pp/30 animate-float">
+        <i class="fas fa-comment-dots text-pp text-xl"></i>
+    </button>
 
     <script src="js/script.js"></script>
 </body>

@@ -1,4 +1,2 @@
-User-agent: *
-Allow: /
-
+Site: https://kignleon.github.io/direct-peptides/
 Sitemap: https://kignleon.github.io/direct-peptides/sitemap.xml
