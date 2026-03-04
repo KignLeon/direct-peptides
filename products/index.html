@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Pure Peptides</title>
+    <meta name="description"
+        content="Browse our full catalog of research-grade peptides. All products manufactured and batch tested in the USA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;900&family=Fragment+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../assets/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- ======================== NAVBAR ======================== -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="../" class="navbar-logo"><img src="../assets/logo.png" alt="Pure Peptides" height="20"></a>
+            <nav class="navbar-links">
+                <a href="../">Home</a>
+                <a href="./" class="active">Products</a>
+                <a href="../blog/">Blog</a>
+                <a href="../#coa">COA</a>
+                <a href="../#contact">Need help?</a>
+            </nav>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <a href="#" class="navbar-cart" aria-label="Cart"><svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" />
+                    </svg></a>
+                <button class="menu-toggle" id="menuToggle"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="../">Home</a><a href="./" class="active">Products</a><a href="../blog/">Blog</a><a
+            href="../#coa">COA</a><a href="../#contact">Need help?</a>
+    </div>
+
+    <!-- ======================== TICKER ======================== -->
+    <div class="ticker">
+        <div class="ticker-track">
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Manufactured in the USA</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Batch Produced, Batch Tested</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Fast and Discreet Shipping</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Affordable Pricing</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> 24/7 Support</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Manufactured in the USA</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Batch Produced, Batch Tested</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Fast and Discreet Shipping</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Affordable Pricing</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> 24/7 Support</div>
+        </div>
+    </div>
+
+    <!-- ======================== PRODUCTS PAGE LAYOUT ======================== -->
+    <div class="page-layout">
+        <!-- Sidebar -->
+        <aside class="page-sidebar">
+            <h3>Product Catalog</h3>
+            <div class="page-sidebar-divider"></div>
+            <div class="page-sidebar-links">
+                <a href="#" class="active" data-filter="all">All Products</a>
+                <a href="#" data-filter="BPC-157">BPC-157</a>
+                <a href="#" data-filter="BPC-157 + TB-500">BPC-157 + TB-500</a>
+                <a href="#" data-filter="CJC-1295 + Ipamorelin">CJC-1295 + Ipamorelin</a>
+                <a href="#" data-filter="Reta">Reta</a>
+                <a href="#" data-filter="Tirz">Tirz</a>
+                <a href="#" data-filter="TB-500">TB-500</a>
+                <a href="#" data-filter="Tesamorelin">Tesamorelin</a>
+                <a href="#" data-filter="Sermorelin">Sermorelin</a>
+                <a href="#" data-filter="Ipamorelin">Ipamorelin</a>
+                <a href="#" data-filter="NAD+">NAD+</a>
+                <a href="#" data-filter="AOD-9604">AOD-9604</a>
+                <a href="#" data-filter="Sema">Sema</a>
+                <a href="#" data-filter="GHK-Cu">GHK-Cu</a>
+                <a href="#" data-filter="GLOW">GLOW</a>
+                <a href="#" data-filter="KLOW">KLOW</a>
+                <a href="#" data-filter="Thymosin Alpha 1">Thymosin Alpha 1</a>
+                <a href="#" data-filter="Hexarelin">Hexarelin</a>
+                <a href="#" data-filter="Melanotan II">Melanotan II</a>
+                <a href="#" data-filter="Kisspeptin">Kisspeptin</a>
+                <a href="#" data-filter="MOTS-c">MOTS-c</a>
+                <a href="#" data-filter="Selank">Selank</a>
+            </div>
+        </aside>
+
+        <!-- Main Product Area -->
+        <main class="page-main">
+            <h2>Explore our products</h2>
+            <p class="subtitle">All orders ship same day from our US facility.</p>
+            <input type="text" class="search-bar" placeholder="Search by product name or type" id="productSearch">
+
+            <div class="products-grid-3 reveal-stagger" id="productsGrid">
+                <!-- BPC-157 -->
+                <div class="product-card-full" data-name="BPC-157" data-category="Recovery Compound">
+                    <span class="product-card-category">Recovery Compound</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">BPC-157</span>
+                    <span class="product-card-price">from $39</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/89F5G2gDefdF8XhUeT2ip0an4.png?scale-down-to=512"
+                            alt="BPC-157"></div>
+                </div>
+                <!-- BPC-157 + TB-500 -->
+                <div class="product-card-full" data-name="BPC-157 + TB-500" data-category="Recovery Compound">
+                    <span class="product-card-category">Recovery Compound</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">BPC-157 + TB-500</span>
+                    <span class="product-card-price">from $99</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/p8XWJzDv71XniAB30olCFnw8tE.png?scale-down-to=512"
+                            alt="BPC-157 + TB-500"></div>
+                </div>
+                <!-- CJC-1295 + Ipamorelin -->
+                <div class="product-card-full" data-name="CJC-1295 + Ipamorelin" data-category="Growth Compound">
+                    <span class="product-card-category">Growth Compound</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">CJC-1295 + Ipamorelin</span>
+                    <span class="product-card-price">from $89</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/2pVAA3YKLgjyzN9MfvSQZ5FoE.png?scale-down-to=512"
+                            alt="CJC-1295 + Ipamorelin"></div>
+                </div>
+                <!-- Reta -->
+                <div class="product-card-full" data-name="Reta" data-category="CAS #: 2381089-83-2">
+                    <span class="product-card-category">CAS #: 2381089-83-2</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Reta</span>
+                    <span class="product-card-price">from $139</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/I0kdZoc0E61R0cbpetk05UuwGE.png?scale-down-to=512"
+                            alt="Reta"></div>
+                </div>
+                <!-- Tirz -->
+                <div class="product-card-full" data-name="Tirz" data-category="CAS #: 2023788-19-2">
+                    <span class="product-card-category">CAS #: 2023788-19-2</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Tirz</span>
+                    <span class="product-card-price">from $99</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/CupYMgUmAmoSJlfyzSmLjSu8w4c.png?scale-down-to=512"
+                            alt="Tirz"></div>
+                </div>
+                <!-- TB-500 -->
+                <div class="product-card-full" data-name="TB-500" data-category="Recovery Compound">
+                    <span class="product-card-category">Recovery Compound</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">TB-500</span>
+                    <span class="product-card-price">from $69</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/ObEF7qATY7mdfkyGcNaKwOETW0.png?scale-down-to=512"
+                            alt="TB-500"></div>
+                </div>
+                <!-- Tesamorelin -->
+                <div class="product-card-full" data-name="Tesamorelin" data-category="Growth Compound">
+                    <span class="product-card-category">Growth Compound</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Tesamorelin</span>
+                    <span class="product-card-price">from $79</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/opR31upk3ht2vS6f8Yg7kopnNI.png?scale-down-to=512"
+                            alt="Tesamorelin"></div>
+                </div>
+                <!-- Sermorelin -->
+                <div class="product-card-full" data-name="Sermorelin" data-category="Growth Compound">
+                    <span class="product-card-category">Growth Compound</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Sermorelin</span>
+                    <span class="product-card-price">from $49</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/Y1hdUrPs1ycdivWVi3JmHdTO24M.png?scale-down-to=512"
+                            alt="Sermorelin"></div>
+                </div>
+                <!-- Ipamorelin -->
+                <div class="product-card-full" data-name="Ipamorelin" data-category="Growth Compound">
+                    <span class="product-card-category">Growth Compound</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Ipamorelin</span>
+                    <span class="product-card-price">from $49</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/Y1hdUrPs1ycdivWVi3JmHdTO24M.png?scale-down-to=512"
+                            alt="Ipamorelin"></div>
+                </div>
+                <!-- NAD+ -->
+                <div class="product-card-full" data-name="NAD+" data-category="Cellular Health">
+                    <span class="product-card-category">Cellular Health</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">NAD+</span>
+                    <span class="product-card-price">from $99</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="NAD+"></div>
+                </div>
+                <!-- AOD-9604 -->
+                <div class="product-card-full" data-name="AOD-9604" data-category="Weight Management">
+                    <span class="product-card-category">Compounded HGH Fragment</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">AOD-9604</span>
+                    <span class="product-card-price">from $49</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="AOD-9604"></div>
+                </div>
+                <!-- Sema -->
+                <div class="product-card-full" data-name="Sema" data-category="Weight Management">
+                    <span class="product-card-category">Weight Management</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Sema</span>
+                    <span class="product-card-price">from $99</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/I0kdZoc0E61R0cbpetk05UuwGE.png?scale-down-to=512"
+                            alt="Sema"></div>
+                </div>
+                <!-- GHK-Cu -->
+                <div class="product-card-full" data-name="GHK-Cu" data-category="Skin/Hair">
+                    <span class="product-card-category">Skin/Hair</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">GHK-Cu</span>
+                    <span class="product-card-price">from $49</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="GHK-Cu"></div>
+                </div>
+                <!-- GLOW -->
+                <div class="product-card-full" data-name="GLOW" data-category="Skin/Hair">
+                    <span class="product-card-category">Skin/Hair</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">GLOW</span>
+                    <span class="product-card-price">from $59</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="GLOW"></div>
+                </div>
+                <!-- KLOW -->
+                <div class="product-card-full" data-name="KLOW" data-category="Skin/Hair">
+                    <span class="product-card-category">Skin/Hair</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">KLOW</span>
+                    <span class="product-card-price">from $59</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="KLOW"></div>
+                </div>
+                <!-- Thymosin Alpha 1 -->
+                <div class="product-card-full" data-name="Thymosin Alpha 1" data-category="Immune">
+                    <span class="product-card-category">Immune</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Thymosin Alpha 1</span>
+                    <span class="product-card-price">from $89</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="Thymosin Alpha 1"></div>
+                </div>
+                <!-- Hexarelin -->
+                <div class="product-card-full" data-name="Hexarelin" data-category="Growth Compound">
+                    <span class="product-card-category">Growth Compound</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Hexarelin</span>
+                    <span class="product-card-price">from $39</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="Hexarelin"></div>
+                </div>
+                <!-- Melanotan II -->
+                <div class="product-card-full" data-name="Melanotan II" data-category="Tanning">
+                    <span class="product-card-category">Tanning</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Melanotan II</span>
+                    <span class="product-card-price">from $39</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="Melanotan II"></div>
+                </div>
+                <!-- Kisspeptin -->
+                <div class="product-card-full" data-name="Kisspeptin" data-category="Reproductive">
+                    <span class="product-card-category">Reproductive</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Kisspeptin</span>
+                    <span class="product-card-price">from $49</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="Kisspeptin"></div>
+                </div>
+                <!-- MOTS-c -->
+                <div class="product-card-full" data-name="MOTS-c" data-category="Metabolic">
+                    <span class="product-card-category">Metabolic</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">MOTS-c</span>
+                    <span class="product-card-price">from $89</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="MOTS-c"></div>
+                </div>
+                <!-- Selank -->
+                <div class="product-card-full" data-name="Selank" data-category="Cognitive">
+                    <span class="product-card-category">Cognitive</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Selank</span>
+                    <span class="product-card-price">from $39</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="Selank"></div>
+                </div>
+                <!-- PT-141 -->
+                <div class="product-card-full" data-name="PT-141" data-category="Reproductive">
+                    <span class="product-card-category">Reproductive</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">PT-141</span>
+                    <span class="product-card-price">from $39</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="PT-141"></div>
+                </div>
+                <!-- Semax -->
+                <div class="product-card-full" data-name="Semax" data-category="Cognitive">
+                    <span class="product-card-category">Cognitive</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Semax</span>
+                    <span class="product-card-price">from $39</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="Semax"></div>
+                </div>
+                <!-- Cagrilintide -->
+                <div class="product-card-full" data-name="Cagrilintide" data-category="Weight Management">
+                    <span class="product-card-category">Weight Management</span>
+                    <span class="product-card-name" style="font-size:18px;margin:4px 0;">Cagrilintide</span>
+                    <span class="product-card-price">from $99</span>
+                    <a href="#" class="btn-primary" style="font-size:12px;padding:8px 16px;margin:8px 0;">Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" width="12" height="12">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg></a>
+                    <div class="product-card-image"><img
+                            src="https://framerusercontent.com/images/xFpprXCHhpCmEhUt2PFQscmD8DE.png?scale-down-to=512"
+                            alt="Cagrilintide"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../assets/logo.png" alt="Pure Peptides">
+                <p>Pure Peptides offers research-grade peptides manufactured and batch tested in the USA. All products
+                    are for laboratory research use only.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Products</h4><a href="./">All Products</a><a href="#">BPC-157</a><a href="#">CJC-1295</a><a
+                        href="#">Reta</a><a href="#">Tirz</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4><a href="../#intro">About</a><a href="../blog/">Blog</a><a href="../#coa">COA</a><a
+                        href="../#contact">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4><a href="../#faq">FAQ</a><a href="../#contact">Need Help?</a><a href="#">Shipping
+                        Policy</a><a href="#">Returns</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2025 Pure Peptides. All rights reserved. For research use only.</div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

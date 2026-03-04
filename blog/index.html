@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Pure Peptides</title>
+    <meta name="description"
+        content="Breaking down the science behind peptide research. Explore articles on peptide synthesis, HPLC, amino acids, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;900&family=Fragment+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../assets/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- ======================== NAVBAR ======================== -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="../" class="navbar-logo"><img src="../assets/logo.png" alt="Pure Peptides" height="20"></a>
+            <nav class="navbar-links">
+                <a href="../">Home</a>
+                <a href="../products/">Products</a>
+                <a href="./" class="active">Blog</a>
+                <a href="../#coa">COA</a>
+                <a href="../#contact">Need help?</a>
+            </nav>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <a href="#" class="navbar-cart" aria-label="Cart"><svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" />
+                    </svg></a>
+                <button class="menu-toggle" id="menuToggle"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="../">Home</a><a href="../products/">Products</a><a href="./" class="active">Blog</a><a
+            href="../#coa">COA</a><a href="../#contact">Need help?</a>
+    </div>
+
+    <!-- ======================== TICKER ======================== -->
+    <div class="ticker">
+        <div class="ticker-track">
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Manufactured in the USA</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Batch Produced, Batch Tested</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Fast and Discreet Shipping</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Affordable Pricing</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> 24/7 Support</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Manufactured in the USA</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Batch Produced, Batch Tested</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Fast and Discreet Shipping</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> Affordable Pricing</div>
+            <div class="ticker-item"><svg viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M5 8l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg> 24/7 Support</div>
+        </div>
+    </div>
+
+    <!-- ======================== BLOG PAGE LAYOUT ======================== -->
+    <div class="page-layout">
+        <!-- Sidebar -->
+        <aside class="page-sidebar">
+            <h3>Blog Posts</h3>
+            <div class="page-sidebar-divider"></div>
+            <div class="page-sidebar-links">
+                <a href="#" class="active">Recent Articles</a>
+                <a href="#">Mass Spectrometry in Peptide Research</a>
+                <a href="#">TB-500 & Hair Follicle Studies</a>
+                <a href="#">Exploring the Difference Between GH, GHRH, and GHRP</a>
+                <a href="#">Excipients in Peptides</a>
+                <a href="#">What is High Performance Liquid Chromatography?</a>
+                <a href="#">Amino Acids, Peptides, & Proteins</a>
+                <a href="#">Lyophilization: How It Works</a>
+                <a href="#">Selank Under the Microscope</a>
+                <a href="#">Peptide Synthesis</a>
+                <a href="#">Melanocortin Agonists</a>
+                <a href="#">The Role of Ipamorelin in Growth Hormone Regulation Studies</a>
+                <a href="#">KPV and Inflammation Studies</a>
+            </div>
+        </aside>
+
+        <!-- Main Blog Area -->
+        <main class="page-main">
+            <h2>Explore our blog</h2>
+            <p class="subtitle">Breaking down the science behind peptide research.</p>
+
+            <div class="blog-grid reveal-stagger">
+                <!-- Article 1 -->
+                <div class="blog-card">
+                    <div class="blog-card-thumb">
+                        <img src="https://framerusercontent.com/images/0rGjEJaLdKo70lIJXISLM0p5I.png?scale-down-to=512"
+                            alt="Mass Spectrometry">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Oct 11, 2025</div>
+                        <div class="blog-card-title">Mass Spectrometry in Peptide Research</div>
+                    </div>
+                </div>
+                <!-- Article 2 -->
+                <div class="blog-card">
+                    <div class="blog-card-thumb">
+                        <img src="https://framerusercontent.com/images/tB3wXSpjKHfz8aC75GWzbTeLxac.png?scale-down-to=512"
+                            alt="TB-500 Hair Follicle">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Oct 1, 2025</div>
+                        <div class="blog-card-title">TB-500 & Hair Follicle Studies: What Research Says</div>
+                    </div>
+                </div>
+                <!-- Article 3 -->
+                <div class="blog-card">
+                    <div class="blog-card-thumb">
+                        <img src="https://framerusercontent.com/images/7rzKSFG4VGf0lcvb6LONHKOL8c.png?scale-down-to=512"
+                            alt="GH GHRH GHRP">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Sep 28, 2025</div>
+                        <div class="blog-card-title">Exploring the Difference Between GH, GHRH, and GHRP</div>
+                    </div>
+                </div>
+                <!-- Article 4 -->
+                <div class="blog-card">
+                    <div class="blog-card-thumb">
+                        <img src="https://framerusercontent.com/images/upmVRhbugszOmUZLDDxicMKDTJ8.png?scale-down-to=512"
+                            alt="Excipients">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Sep 6, 2025</div>
+                        <div class="blog-card-title">Excipients in Peptides: What are they and how are they used?</div>
+                    </div>
+                </div>
+                <!-- Article 5 -->
+                <div class="blog-card">
+                    <div class="blog-card-thumb">
+                        <img src="https://framerusercontent.com/images/OxGDN0F26Lp5F1OYIT3fktxBs.png?scale-down-to=512"
+                            alt="HPLC">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Aug 29, 2025</div>
+                        <div class="blog-card-title">What Is High Performance Liquid Chromatography (HPLC)?</div>
+                    </div>
+                </div>
+                <!-- Article 6 -->
+                <div class="blog-card">
+                    <div class="blog-card-thumb">
+                        <img src="https://framerusercontent.com/images/ZLTACt3mCJ2MNoI1bvZ5KQp9YCQ.png?scale-down-to=512"
+                            alt="Amino Acids">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Aug 16, 2025</div>
+                        <div class="blog-card-title">Amino Acids, Peptides, & Proteins: What's The Difference?</div>
+                    </div>
+                </div>
+                <!-- Article 7 -->
+                <div class="blog-card">
+                    <div class="blog-card-thumb"
+                        style="background:var(--pp-surface);display:flex;align-items:center;justify-content:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="var(--pp-accent)" stroke-width="1">
+                            <path
+                                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                        </svg>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Sep 3, 2022</div>
+                        <div class="blog-card-title">Lyophilization: How It Works</div>
+                    </div>
+                </div>
+                <!-- Article 8 -->
+                <div class="blog-card">
+                    <div class="blog-card-thumb"
+                        style="background:var(--pp-surface);display:flex;align-items:center;justify-content:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="var(--pp-accent)" stroke-width="1">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 6v6l4 2" />
+                        </svg>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Aug 3, 2025</div>
+                        <div class="blog-card-title">Selank Under the Microscope</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="../assets/logo.png" alt="Pure Peptides">
+                <p>Pure Peptides offers research-grade peptides manufactured and batch tested in the USA. All products
+                    are for laboratory research use only.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Products</h4><a href="../products/">All Products</a><a href="#">BPC-157</a><a
+                        href="#">CJC-1295</a><a href="#">Reta</a><a href="#">Tirz</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4><a href="../#intro">About</a><a href="./">Blog</a><a href="../#coa">COA</a><a
+                        href="../#contact">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4><a href="../#faq">FAQ</a><a href="../#contact">Need Help?</a><a href="#">Shipping
+                        Policy</a><a href="#">Returns</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2025 Pure Peptides. All rights reserved. For research use only.</div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,181 +1,135 @@
-/**
- * Pure Peptides — Core Interaction Script
- * Handles: Mobile Menu, Modal, FAQ Accordion, Scroll Reveal
- */
+/* ================================================
+   PURE PEPTIDES — JS Interactions
+   Mobile menu, scroll reveal, FAQ, product search/filter
+   ================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initMobileMenu();
-    initModalSystem();
-    initFAQ();
-    initScrollReveal();
-});
 
-/* --- Mobile Menu --- */
-function initMobileMenu() {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    if (!btn || !menu) return;
+    /* ========================
+       MOBILE MENU
+       ======================== */
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
 
-    const links = menu.querySelectorAll('a');
-
-    btn.addEventListener('click', () => {
-        const isOpen = menu.classList.contains('open');
-        toggleMenu(!isOpen);
-    });
-
-    links.forEach(link => {
-        link.addEventListener('click', () => toggleMenu(false));
-    });
-
-    function toggleMenu(show) {
-        if (show) {
-            menu.classList.add('open');
-            document.body.style.overflow = 'hidden';
-            btn.innerHTML = '<i class="fas fa-times text-2xl" style="color:var(--pp-secondary)"></i>';
-        } else {
-            menu.classList.remove('open');
-            document.body.style.overflow = '';
-            btn.innerHTML = '<i class="fas fa-bars text-2xl text-white"></i>';
-        }
-    }
-}
-
-/* --- Modal System --- */
-function initModalSystem() {
-    const modal = document.getElementById('modal-overlay');
-    if (!modal) return;
-
-    const triggers = document.querySelectorAll('[data-trigger="modal"]');
-    const closers = document.querySelectorAll('[data-close="modal"]');
-
-    triggers.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal();
-        });
-    });
-
-    closers.forEach(btn => {
-        btn.addEventListener('click', closeModal);
-    });
-
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-    });
-
-    function openModal() {
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        modal.classList.add('hidden');
-        document.body.style.overflow = '';
-    }
-
-    // Handle form inside modal
-    const form = modal.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            handleFormSubmit(form);
-        });
-    }
-}
-
-/* --- FAQ Accordion --- */
-function initFAQ() {
-    const items = document.querySelectorAll('.faq-item');
-    items.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        if (!question) return;
-        question.addEventListener('click', () => {
-            const wasActive = item.classList.contains('active');
-            // Close all
-            items.forEach(i => i.classList.remove('active'));
-            // Toggle current
-            if (!wasActive) item.classList.add('active');
-        });
-    });
-}
-
-/* --- Scroll Reveal --- */
-function initScrollReveal() {
-    const els = document.querySelectorAll('.scroll-reveal');
-    if (!els.length) return;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-
-    els.forEach(el => observer.observe(el));
-}
-
-/* --- Form Submission (AJAX) --- */
-async function handleFormSubmit(form) {
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.innerText;
-
-    // Phone validation
-    const phone = form.querySelector('input[type="tel"]');
-    if (phone && phone.value.replace(/\D/g, '').length < 10) {
-        phone.style.borderColor = '#ef4444';
-        phone.focus();
-        return;
-    }
-
-    btn.disabled = true;
-    btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Sending...';
-
-    const formData = new FormData(form);
-    formData.append('_captcha', 'false');
-
-    try {
-        const action = form.getAttribute('action');
-        const response = await fetch(action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
+    if (menuToggle && mobileNav) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
         });
 
-        if (response.ok) {
-            btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-            btn.style.background = '#10b981';
-            form.reset();
+        // Close on link click
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('open');
+                mobileNav.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
 
-            setTimeout(() => {
-                btn.disabled = false;
-                btn.innerText = originalText;
-                btn.style.background = '';
-                const modal = document.getElementById('modal-overlay');
-                if (modal && form.closest('#modal-overlay')) {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = '';
+    /* ========================
+       SCROLL REVEAL
+       ======================== */
+    const revealElements = document.querySelectorAll('.reveal, .reveal-stagger');
+    if (revealElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
-            }, 3000);
-        } else {
-            throw new Error('Failed');
-        }
-    } catch (err) {
-        btn.disabled = false;
-        btn.innerText = originalText;
-        alert('Something went wrong. Please try again.');
-    }
-}
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-/* --- Phone Format --- */
-document.addEventListener('input', (e) => {
-    if (e.target.type === 'tel') {
-        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-        e.target.value = !x[2] ? x[1] : `(${x[1]}) ${x[2]}${x[3] ? '-' + x[3] : ''}`;
+        revealElements.forEach(el => observer.observe(el));
+    }
+
+    /* ========================
+       FAQ ACCORDION
+       ======================== */
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                // Close all
+                faqItems.forEach(i => i.classList.remove('open'));
+                // Toggle clicked
+                if (!isOpen) item.classList.add('open');
+            });
+        }
+    });
+
+    /* ========================
+       PRODUCT SEARCH (Products page)
+       ======================== */
+    const searchInput = document.getElementById('productSearch');
+    const productsGrid = document.getElementById('productsGrid');
+
+    if (searchInput && productsGrid) {
+        const cards = productsGrid.querySelectorAll('.product-card-full');
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase().trim();
+            cards.forEach(card => {
+                const name = (card.dataset.name || '').toLowerCase();
+                const category = (card.dataset.category || '').toLowerCase();
+                const match = name.includes(query) || category.includes(query);
+                card.style.display = match ? '' : 'none';
+            });
+        });
+    }
+
+    /* ========================
+       SIDEBAR FILTER (Products page)
+       ======================== */
+    const sidebarLinks = document.querySelectorAll('.page-sidebar-links a[data-filter]');
+    if (sidebarLinks.length > 0 && productsGrid) {
+        const cards = productsGrid.querySelectorAll('.product-card-full');
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const filter = link.dataset.filter;
+
+                // Update active state
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                // Filter cards
+                cards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = '';
+                    } else {
+                        const name = card.dataset.name || '';
+                        card.style.display = name === filter ? '' : 'none';
+                    }
+                });
+
+                // Clear search
+                if (searchInput) searchInput.value = '';
+            });
+        });
+    }
+
+    /* ========================
+       NAVBAR SCROLL EFFECT
+       ======================== */
+    const navbar = document.querySelector('.navbar-inner');
+    if (navbar) {
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const scroll = window.scrollY;
+            if (scroll > 50) {
+                navbar.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
+                navbar.style.background = 'rgba(255,255,255,0.92)';
+            } else {
+                navbar.style.boxShadow = '';
+                navbar.style.background = '';
+            }
+            lastScroll = scroll;
+        }, { passive: true });
     }
 });
