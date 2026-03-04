@@ -124,12 +124,57 @@ document.addEventListener('DOMContentLoaded', () => {
             const scroll = window.scrollY;
             if (scroll > 50) {
                 navbar.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
-                navbar.style.background = 'rgba(255,255,255,0.92)';
+                navbar.style.background = 'rgba(255,255,255,0.85)';
             } else {
                 navbar.style.boxShadow = '';
                 navbar.style.background = '';
             }
             lastScroll = scroll;
         }, { passive: true });
+    }
+
+    /* ========================
+       WELCOME POPUP (Home page only)
+       Auto-shows after 5s, minimizes to pill
+       ======================== */
+    const popupOverlay = document.getElementById('ppPopupOverlay');
+    const popupClose = document.getElementById('ppPopupClose');
+    const popupMini = document.getElementById('ppPopupMini');
+
+    if (popupOverlay && popupClose && popupMini) {
+        // Show popup after 5 seconds (only once per session)
+        if (!sessionStorage.getItem('pp_popup_shown')) {
+            setTimeout(() => {
+                popupOverlay.classList.add('active');
+                sessionStorage.setItem('pp_popup_shown', '1');
+            }, 5000);
+        } else {
+            // If already shown this session, show the mini button
+            popupMini.classList.add('visible');
+        }
+
+        // Close popup → show mini button
+        popupClose.addEventListener('click', () => {
+            popupOverlay.classList.remove('active');
+            setTimeout(() => {
+                popupMini.classList.add('visible');
+            }, 300);
+        });
+
+        // Click overlay background to close
+        popupOverlay.addEventListener('click', (e) => {
+            if (e.target === popupOverlay) {
+                popupOverlay.classList.remove('active');
+                setTimeout(() => {
+                    popupMini.classList.add('visible');
+                }, 300);
+            }
+        });
+
+        // Mini button → re-open popup
+        popupMini.addEventListener('click', () => {
+            popupMini.classList.remove('visible');
+            popupOverlay.classList.add('active');
+        });
     }
 });
